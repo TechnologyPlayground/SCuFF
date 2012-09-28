@@ -7,6 +7,10 @@ require_relative 'lib/database'
 
 require_relative 'categories'
 
+configure do
+  set :title, "Awesome Items!"
+end
+
 get '/' do
-  Database.new.items.find
+
 end
