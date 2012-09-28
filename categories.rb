@@ -16,8 +16,14 @@ get '/cat/:id' do
   haml :"cats/cat"
 end
 
-post '/cat' do
+get '/cat' do
+  haml :"cats/new_cat"
+end
 
+post '/cat' do
+  cat = {id: BSON::ObjectId.new, name: params[:name]}
+  Database.new.cats.insert cat
+  redirect '/cat/' + cat[:id].to_s
 end
 
 post '/cat/:id/field' do
