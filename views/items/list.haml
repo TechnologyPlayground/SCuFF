@@ -4,7 +4,7 @@
   - @items.each do |item|
     %tr
       %td
-        %a{href: "item/" + item["_id"].to_s}= item["name"]
+        %a{href: "/item/" + item["_id"].to_s}= item["name"]
   %tr
     %td  
       %a(href="item") New item

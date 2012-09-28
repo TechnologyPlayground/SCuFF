@@ -11,7 +11,7 @@ get '/items' do
 end
 
 get '/cat/:id/items' do
-  @items = Database.new.items.find(cat: {_id: BSON::ObjectId(params[:id])}) || []
+  @items = Database.new.items.find("cat._id" => BSON::ObjectId(params[:id])) || []
   haml :"items/list"
 end
 
