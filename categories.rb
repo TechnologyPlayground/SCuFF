@@ -10,10 +10,6 @@ get '/cats' do
   haml :"cats/list"
 end
 
-get '/cat/:id' do
-
-end
-
 get '/cat' do
   haml :"cats/new_cat"
 end
@@ -22,6 +18,22 @@ post '/cat' do
   cat = {_id: BSON::ObjectId.new, name: params[:name]}
   Database.new.cats.insert cat
   redirect '/cat/' + cat[:_id].to_s
+end
+
+get '/cat/:id' do
+  @cat = Database.new.cats.find_one(:_id=> BSON::ObjectId(params[:id]))
+    
+  haml :"cats/cat"
+end
+
+post '/cat/:id' do
+  field = {_id: BSON::ObjectId.new, name: params[:name]}
+  
+  cat = Database.new.cats.find_one(:_id=> BSON::ObjectId(params[:id]))
+  cat[:fields] ||= []
+  cat[:fields] << field
+  
+  redirect '/cat/' + params[:id]
 end
 
 post '/cat/:id/field' do
