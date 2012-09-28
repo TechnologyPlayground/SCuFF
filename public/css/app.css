@@ -1,15 +1,47 @@
+/* Theme: http://colorschemedesigner.com/#0s11Tw0w0w0w0 */
 
 header {
+  background-color: #A64800;
+  color: #FFF;
   padding: 20px;
+  padding-bottom: 0px;
 }
 
 header h1 {
   font-family: 'Londrina Sketch', cursive;
   font-size: 64px;
+  color: #FF6F00;
+  text-shadow: 2px 2px 8px #bf6e30;
+  letter-spacing: 8px;
 }
 
 header h2 {
   font-family: 'Swanky and Moo Moo', cursive;
+}
+
+header nav {
+  background-color: #BF6E30;
+  -webkit-border-radius: 10px 10px 0px 0px;
+  border-radius: 10px 10px 0px 0px;
+  border: 2px solid #FF9340;
+  border-bottom: none;
+}
+
+header nav ul {
+  margin: 0px;
+}
+
+header nav ul li {
+  display: inline-block;
+  padding: 6px;
+}
+
+header nav ul li a {
+  color: #FFB073;
+}
+
+header nav ul li a:hover {
+    color: #FFFFFF;
 }
 
 #contenthere {
