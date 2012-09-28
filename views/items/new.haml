@@ -1,0 +1,9 @@
+%form(method="post")
+  %div
+    %label(for="name") Name: 
+    %input(name="name" id="name")
+  - (@cat["fields"] || []).each do |cat|
+    %div
+      %label{for: "field_" + cat["_id"].to_s}= cat["name"] + ": "
+      %input{id: "field_" + cat["_id"].to_s, name: "field_" + cat["_id"].to_s}
+%input(type="submit")

@@ -17,6 +17,7 @@ post '/cat/:id/item' do
   
 end
 
-post '/item/:id' do
-
+get '/cat/:id/item' do
+  @cat = Database.new.cats.find_one(:_id => BSON::ObjectId(params[:id]))
+  haml :"items/new"
 end
