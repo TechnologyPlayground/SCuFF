@@ -5,3 +5,7 @@
   .entry
     %input(name="name")
   %input(type="submit")
+  
+%ul
+  - @cat['fields'].each do |field|
+    %li= field["name"]

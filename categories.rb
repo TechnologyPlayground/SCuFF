@@ -15,7 +15,7 @@ get '/cat' do
 end
 
 post '/cat' do
-  cat = {_id: BSON::ObjectId.new, name: params[:name]}
+  cat = {_id: BSON::ObjectId.new, name: params[:name], fields: []}
   Database.new.cats.insert cat
   redirect '/cat/' + cat[:_id].to_s
 end
@@ -29,9 +29,10 @@ end
 post '/cat/:id' do
   field = {_id: BSON::ObjectId.new, name: params[:name]}
   
-  cat = Database.new.cats.find_one(:_id=> BSON::ObjectId(params[:id]))
-  cat[:fields] ||= []
-  cat[:fields] << field
+  cat = Database.new.cats.find_one(:_id => BSON::ObjectId(params[:id]))
+  cat['fields'] << field
+  
+  Database.new.cats.update({:_id => BSON::ObjectId(params[:id])}, cat)
   
   redirect '/cat/' + params[:id]
 end
