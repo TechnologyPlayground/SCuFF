@@ -34,16 +34,12 @@ post '/cat/:id/item' do
   redirect "/cat/" + cat["_id"].to_s + "/items"
 end
 
-<<<<<<< HEAD
+get '/item/:id' do
+  @item = Database.new.items.find_one(_id: BSON::ObjectId(params[:id]))    
+  haml :"items/item"
 end
 
-get '/item/:id' do
-  @item = Database.new.items.find_one(_id: BSON::ObjectId(params[:id]))
-    
-  haml :"items/item"
-=======
 get '/cat/:id/item' do
   @cat = Database.new.cats.find_one(:_id => BSON::ObjectId(params[:id]))
   haml :"items/new"
->>>>>>> 6179528cc8084876dba44024e64c686e501c77ea
 end
