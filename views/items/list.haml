@@ -1,0 +1,10 @@
+= @items.count.to_s + " item(s)"
+%table
+  %tbody
+  - @items.each do |item|
+    %tr
+      %td
+        %a{href: "item/" + item["_id"].to_s}= item["name"]
+  %tr
+    %td  
+      %a(href="item") New item
