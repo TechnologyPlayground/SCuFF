@@ -1,1 +1,7 @@
-#name= @cat[:name]
+%h1#name= @cat[:name]
+
+%h3= "Fields"
+%form(method="POST")
+  .entry
+    %input(name="name")
+  %input(type="submit")
