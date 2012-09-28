@@ -1,5 +1,5 @@
-= @cats.count.to_s + " categorie(s)"
-%table
+= @cats.count.to_s + " categories"
+%table(style="width: 100%;")
   %tbody
   - @cats.each do |item|
     %tr
@@ -8,8 +8,5 @@
       %td
         %a{href: "cat/" + item["_id"].to_s + "/items"} Items
       %td= (item["fields"] || []).count.to_s + " field(s)"
-  %tr
-    %td  
-      %a(href="cat") New category
-    %td
-    %td
+%div
+  %a(href="cat") New category
