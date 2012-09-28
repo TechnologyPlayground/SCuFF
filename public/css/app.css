@@ -1,5 +1,9 @@
 /* Theme: http://colorschemedesigner.com/#0s11Tw0w0w0w0 */
 
+body {
+  background-color: #FFB073;
+}
+
 header {
   background-color: #A64800;
   color: #FFF;
@@ -41,9 +45,14 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #FFFFFF;
+  color: #FFFFFF;
 }
 
 #contenthere {
-    padding: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: #FFFFFF;
+  padding: 10px;
+  -webkit-border-radius: 0px 0px 10px 10px;
+  border-radius: 0px 0px 10px 10px;
 }
