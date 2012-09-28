@@ -10,7 +10,10 @@ get '/cats' do
 end
 
 get '/cat/:id' do
-
+  #@cat = Database.new.cats.find params[:id]
+  @cat = { :name => "Nerf" }
+  
+  haml :"cats/cat"
 end
 
 post '/cat' do
