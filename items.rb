@@ -27,7 +27,7 @@ post '/cat/:id/item' do
   }
 
   (cat["fields"] || []).each do |field|
-    item["fields"] << { _id: field["_id"], name: field["name"], value: params["field_" + field["_id"]] }
+    item[:fields] << { _id: field["_id"], name: field["name"], value: params["field_" + field["_id"].to_s] }
   end
 
   db.items.insert item
