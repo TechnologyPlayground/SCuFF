@@ -7,6 +7,8 @@
         %a{href: "cat/" + item["_id"].to_s}= item["name"]
       %td
         %a{href: "cat/" + item["_id"].to_s + "/items"} Items
-      %td= (item["fields"] || []).count.to_s + " field(s)"
+      %td
+        %span= (item["fields"] || []).count.to_s + " field(s) - "
+        %a{href: "cat/" + item["_id"].to_s + "/item"} Add an item
 %div
   %a(href="cat") New category
