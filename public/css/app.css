@@ -1,5 +1,9 @@
 /* Theme: http://colorschemedesigner.com/#0s11Tw0w0w0w0 */
 
+body {
+  background-color: #EEE;
+}
+
 header {
   background-color: #A64800;
   color: #FFF;
@@ -44,6 +48,11 @@ header nav ul li a:hover {
     color: #FFFFFF;
 }
 
-#contenthere {
+#content {
+    background: #FFF;
+    border-left: 2px solid #FF9340;
+    border-right: 2px solid #FF9340;
+    border-bottom: 2px solid #FF9340;
+    margin: 0 20px;
     padding: 20px;
 }
