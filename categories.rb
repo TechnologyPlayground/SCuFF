@@ -6,7 +6,7 @@ require 'mongo'
 require_relative 'lib/database'
 
 get '/cats' do
-  @cats = cats.find || []
+  @cats = Database.new.cats.find || []
   haml :"cats/list"
 end
 
