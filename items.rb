@@ -10,11 +10,11 @@ get '/items' do
 end
 
 get '/cat/:id/items' do
-
+  
 end
 
 post '/cat/:id/item' do
-
+  
 end
 
 post '/item/:id' do

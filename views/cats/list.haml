@@ -1,6 +1,12 @@
-%ul
+%table
+  %tbody
   - @cats.each do |item|
-    %li
-      %a{:href => "cat/" + item["_id"].to_s}= item["name"]
-  %li
-    %a(href="cat") New category
+    %tr
+      %td
+        %a{:href => "cat/" + item["_id"].to_s}= item["name"]
+      %td
+        %a{:href => "cat/" + item["_id"].to_s + "/items"} Items
+  %tr
+    %td  
+      %a(href="cat") New category
+    %td
