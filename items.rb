@@ -6,11 +6,13 @@ require 'mongo'
 require_relative 'lib/database'
 
 get '/items' do
-
+  @items = Database.new.items.find || []
+  haml :"cats/list"
 end
 
 get '/cat/:id/items' do
-  
+  @items = Database.new.items.find(category_id: BSON::ObjectId(params[:id])) || []
+  haml :"cats/list"
 end
 
 post '/cat/:id/item' do
