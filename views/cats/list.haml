@@ -1,0 +1,6 @@
+%ul
+  - @cats.each do |item|
+    %li
+      %a{:href => "cat/" + item["_id"].to_s}= item["name"]
+  %li
+    %a(href="cat") New category
