@@ -1,7 +1,7 @@
 /* Theme: http://colorschemedesigner.com/#0s11Tw0w0w0w0 */
 
 body {
-  background-color: #EEE;
+  background-color: #FFB073;
 }
 
 header {
@@ -45,14 +45,14 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #FFFFFF;
+  color: #FFFFFF;
 }
 
 #content {
-    background: #FFF;
-    border-left: 2px solid #FF9340;
-    border-right: 2px solid #FF9340;
-    border-bottom: 2px solid #FF9340;
-    margin: 0 20px;
-    padding: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: #FFFFFF;
+  padding: 10px;
+  -webkit-border-radius: 0px 0px 10px 10px;
+  border-radius: 0px 0px 10px 10px;
 }
