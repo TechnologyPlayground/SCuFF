@@ -7,12 +7,12 @@ require_relative 'lib/database'
 
 get '/items' do
   @items = Database.new.items.find || []
-  haml :"cats/list"
+  haml :"items/list"
 end
 
 get '/cat/:id/items' do
   @items = Database.new.items.find(cat: {_id: BSON::ObjectId(params[:id])}) || []
-  haml :"cats/list"
+  haml :"items/list"
 end
 
 post '/cat/:id/item' do
