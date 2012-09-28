@@ -1,5 +1,10 @@
 %h1#name= @item['name']
 
+%h3 Category
+%ul
+  %li
+    %a{href: "/cat/" + @item['cat']['_id'].to_s}= @item['cat']['name']
+
 %h3 Fields
 %ul
   - @item['fields'].each do |field|
