@@ -1,0 +1,6 @@
+%h1#name= @item['name']
+
+%h3 Fields
+%ul
+  - @item['fields'].each do |field|
+    %li= field["name"] - field["value"] 
