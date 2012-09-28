@@ -21,11 +21,11 @@ get '/cat' do
 end
 
 post '/cat' do
-  cat = {id: BSON::ObjectId.new, name: params[:name]}
+  cat = {_id: BSON::ObjectId.new, name: params[:name]}
   Database.new.cats.insert cat
-  redirect '/cat/' + cat[:id].to_s
+  redirect '/cat/' + cat[:_id].to_s
 end
 
 post '/cat/:id/field' do
-
+  Database.new.cats.find
 end
