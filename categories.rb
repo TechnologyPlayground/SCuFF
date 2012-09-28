@@ -21,16 +21,16 @@ post '/cat' do
 end
 
 get '/cat/:id' do
-  @cat = Database.new.cats.find(:"cats._id" => BSON::ObjectId(params[:id]))
-  #@cat = { :name => "Nerf" }
-  
+  @cat = Database.new.cats.find_one(:_id=> BSON::ObjectId(params[:id]))
+    
   haml :"cats/cat"
 end
 
 post '/cat/:id' do
   field = {_id: BSON::ObjectId.new, name: params[:name]}
   
-  cat = Database.new.cats.find(:_id => BSON::ObjectId(params[:id]))
+  cat = Database.new.cats.find_one(:_id=> BSON::ObjectId(params[:id]))
+  cat[:fields] ||= []
   cat[:fields] << field
   
   redirect '/cat/' + params[:id]
