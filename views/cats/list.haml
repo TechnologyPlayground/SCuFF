@@ -1,12 +1,15 @@
+= @cats.count.to_s + " categorie(s)"
 %table
   %tbody
   - @cats.each do |item|
     %tr
       %td
-        %a{:href => "cat/" + item["_id"].to_s}= item["name"]
+        %a{:href => "cat/" + item[:_id].to_s}= item[:name]
       %td
-        %a{:href => "cat/" + item["_id"].to_s + "/items"} Items
+        %a{:href => "cat/" + item[:_id].to_s + "/items"} Items
+      %td= item[:fields].count.to_s + " field(s)"
   %tr
     %td  
       %a(href="cat") New category
+    %td
     %td
