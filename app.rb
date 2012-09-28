@@ -13,5 +13,5 @@ configure do
 end
 
 get '/' do
-
+  haml :index
 end
